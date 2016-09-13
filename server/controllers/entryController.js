@@ -3,7 +3,7 @@ var Entry = require("../data/entry");
 var _ = require("underscore");
 
 var router = require("express").Router();
-router.route("/entries/:id?").get(getEntries).post(addEntry).delete(deleteEntry);
+router.route("/entries/:id?").get(getEntries).post(addEntry).delete(deleteEntry).put(updateEntry);
 
 function getEntries(req, res) {
   Entry.find(function (err, entries) {
@@ -31,6 +31,17 @@ function deleteEntry(req, res) {
       res.send(err)
     else
       res.json(removed);
+  });
+}
+
+function updateEntry(req, res) {
+  var id = req.params.id;
+  console.log(req.params);
+  Entry.findByIdAndUpdate(id, function (err, updated) {
+    if (err)
+      res.send(err);
+    else
+      res.json(updated);
   });
 }
 

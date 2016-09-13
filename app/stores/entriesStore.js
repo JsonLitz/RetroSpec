@@ -30,6 +30,13 @@ function EntryStore() {
         });
     }
 
+    function updateEntry(entry) {
+        entryService.updateEntry(entry).then(function (res){
+          console.log(res);
+          triggerListeners();
+        });
+    }
+
     function triggerListeners() {
         getEntries(function (res) {
             listeners.forEach(function (listener) {
@@ -58,28 +65,3 @@ function EntryStore() {
 }
 
 module.exports = EntryStore();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  

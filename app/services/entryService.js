@@ -40,5 +40,17 @@ module.exports = {
         error: reject
       });
     });
+  },
+  updateEntry: function (entry){
+    var Promise = promise.Promise;
+    return new Promise(function (resolve, reject){
+      $.ajax({
+        url: resourceUrl + "/" + entry._id,
+        method: "UPDATE",
+        dataType: "json",
+        success: resolve,
+        error: reject
+      });
+    });
   }
-}
+};

@@ -27,11 +27,11 @@ module.exports = React.createClass({
                     <input type="text" className="form-control" id="title" name="title" value={this.state.title} onChange={this.handleInputChange} placeholder="Title" />
                 </div>
                 <div className="form-group">
-                    <label className="control-label" htmlFor="body">body:</label>
+                    <label className="control-label" htmlFor="body">Body:</label>
                     <input type="text" className="form-control" id="body" name="body" value={this.state.address} onChange={this.handleInputChange} placeholder="Body" />
                 </div>
                 <div className="form-group">
-                    <button className="btn" type="submit">Add Entry</button>
+                    <button className="btn btn-primary" type="submit">Add Entry</button>
                 </div>
             </form>
         )
