@@ -4,15 +4,14 @@ var Schema = mongoose.Schema;
 var entrySchema = new Schema({
   title: String,
   body: String,
-  _user: [
+  _user:
+  [
     {
       type: Schema.Types.ObjectId,
       ref: "User"
     }
-  ], // Each location will reference a specific user.
-
+  ], // Each entry will reference a specific user.
   dateTime: {type:Date, default: new Date()}
-
 });
 
   module.exports = mongoose.model("entry", entrySchema);
