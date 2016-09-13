@@ -1,38 +1,47 @@
 var dispatcher = require("../dispatcher");
+var entryService = require("../services/entryService");
+
 
 function EntryStore() {
     var listeners = [];
 
-    var entries = [{title:"First day at new Job",body:"what a day. Everyone is nice. Food is ok"},
-                    {title:"Tinder date with Michelle",body:"Super boring"}];
-
-    function getEntries() {
-        return entries;
+    function onChange(listener) {
+      getEntries(listener);
+      listeners.push(listener);
     }
 
-    function onChange(listener) {
-        listeners.push(listener);
+    function getEntries(cb){
+      entryService.getEntries().then(function (res) {
+        cb(res);
+      });
     }
 
     function addEntry(entry) {
-        entries.push(entry)
-        triggerListeners();
+        entryService.addEntry(entry).then(function (res) {
+            console.log(res);
+            triggerListeners();
+        });
     }
 
     function deleteEntry(entry) {
-        var _index;
-        entries.map(function (s, index) {
-            if (s.name === entry.name) {
-                _index = index;
-            }
+        entryService.deleteEntry(entry).then(function (res) {
+            console.log(res);
+            triggerListeners();
         });
-        entries.splice(_index, 1);
-        triggerListeners();
+    }
+
+    function updateEntry(entry) {
+        entryService.updateEntry(entry).then(function (res){
+          console.log(res);
+          triggerListeners();
+        });
     }
 
     function triggerListeners() {
-        listeners.forEach(function (listener) {
-            listener(entries);
+        getEntries(function (res) {
+            listeners.forEach(function (listener) {
+                listener(res);
+            });
         });
     }
 
@@ -51,7 +60,6 @@ function EntryStore() {
     });
 
     return {
-        getEntries: getEntries,
         onChange: onChange
     }
 }
