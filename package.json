@@ -7,7 +7,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./server/server.js"
+    "start": "node index.js"
   },
   "author": "JSON",
   "license": "ISC",
