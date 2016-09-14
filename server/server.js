@@ -4,6 +4,8 @@ var bodyParser = require("body-parser");
 var path = require("path");
 var mongoose = require("mongoose");
 
+var mongodbUri = "mongodb://heroku_2ffvpvj2:kv7ee1u6earcccdtn3f9qlvekc@ds033106.mlab.com:33106/heroku_2ffvpvj2";
+
 //controllers
 var entryController = require("./controllers/entryController");
 
@@ -25,15 +27,12 @@ app.listen(process.env.PORT || 7777,function(){
 });
 
 
-mongoose.connect(uristring, function (err, res) {
+mongoose.connect(mongodbUri, function (err, res) {
   if(err){
-    console.log('ERROR connecting to: ' + uristring+ '. ' + err);
+    console.log('ERROR connecting to: ' + mongodbUri+ '. ' + err);
   } else {
-    console.log('Succeeded connected to: '+uristring);
+    console.log('Succeeded connected to: '+mongodbUri);
   }
 });
-console.log(process);
-
-console.log(process.env);
-
+// console.log(MONGOLAB_URI);
 console.log('heroku logs are working');
