@@ -19,7 +19,7 @@ app.get('/api', controllers.api.index);
 // app.put('/api/entries/:entryId', controllers.entry.update);
 
 
-app.listen(7777,function(){
+app.listen(process.env.PORT || 7777,function(){
   console.log("yo, we listening on port", 7777, "fam");
 });
 
