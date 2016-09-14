@@ -32,5 +32,8 @@ mongoose.connect(uristring, function (err, res) {
     console.log('Succeeded connected to: '+uristring);
   }
 });
+console.log(process);
+
+console.log(process.env);
 
 console.log('heroku logs are working');
