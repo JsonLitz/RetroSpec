@@ -1,5 +1,6 @@
 var React = require("react");
 var actions = require("../actions/EntryActions");
+var Rating = require('react-rating');
 
 module.exports = React.createClass({
     getInitialState:function(){
@@ -29,6 +30,9 @@ module.exports = React.createClass({
                 <div className="form-group">
                     <label className="control-label" htmlFor="body">Body:</label>
                     <input type="text" className="form-control" id="body" name="body" value={this.state.address} onChange={this.handleInputChange} placeholder="Body" />
+                </div>
+                <div>
+                  <Rating />
                 </div>
                 <div className="form-group">
                     <button className="btn btn-primary" type="submit">Add Entry</button>

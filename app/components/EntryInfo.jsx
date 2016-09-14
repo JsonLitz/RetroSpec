@@ -1,5 +1,6 @@
 var React = require("react");
 var actions = require("../actions/EntryActions");
+var Rating = require('react-rating');
 
 module.exports = React.createClass({
   deleteEntry: function(e){
@@ -18,6 +19,8 @@ module.exports = React.createClass({
         <div className="panel-heading">
           {this.props.info.title}
           <span className="pull-right">{this.props.info.dateTime}</span>
+          <span className="center"> <Rating /></span>
+
         </div>
 
 
