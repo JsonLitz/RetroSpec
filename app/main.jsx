@@ -8,6 +8,27 @@ var getEntriesCallback = function(entries){
   render();
 };
 
+
+setTimeout(function() {
+   $('.swipe-right-icon').hide();
+ }, 1000);
+// var StarRatingComponent = require("react-star-rating-component");
+//
+// class App extends React.Component {
+//   constructor() {
+//     super();
+//
+//     this.state = {
+//       rating: 1,
+//       rating_custom_icon: 6,
+//       rating_half_star: 3.5
+//     };
+//   }
+//   onStarClick(nextValue, prevValue, name) {
+//    console.log('name: %s, nextValue: %s, prevValue: %s', name, nextValue, prevValue);
+//    this.setState({rating: nextValue});
+//  }
+
 entriesStore.onChange(getEntriesCallback);
 
 
