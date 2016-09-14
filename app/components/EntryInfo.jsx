@@ -22,9 +22,9 @@ module.exports = React.createClass({
         </div>
 
 
-        <span className="pull-right text-uppercase delete-button" onClick={this.deleteEntry}>&times;</span>
+        <span className="pull-right text-uppercase delete-button glyphicon-record" onClick={this.deleteEntry}></span>
 
-        <div className="panel-body">
+        <div className="panel-body swipe-right-icon">
           {this.props.info.body}
         </div>
 
