@@ -18,12 +18,13 @@ function getEntries(req, res) {
 }
 
 function addEntry(req, res) {
+  console.log('hit addEntry')
   var entry = new Entry(_.extend({}, req.body));
   entry.save(function (err) {
     if (err){
-      console.log('post is broken');
       res.send(err);
     }else{
+      console.log('post is not broken');
       res.json(entry);
     }
   });
