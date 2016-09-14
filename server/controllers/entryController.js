@@ -8,6 +8,8 @@ router.route("/entries/:id?").get(getEntries).post(addEntry).delete(deleteEntry)
 function getEntries(req, res) {
   Entry.find(function (err, entries) {
     if (err)
+    console.log('GET is broken');
+
       res.send(err);
     else
       res.json(entries);
@@ -18,6 +20,7 @@ function addEntry(req, res) {
   var entry = new Entry(_.extend({}, req.body));
   entry.save(function (err) {
     if (err)
+    console.log('post is broken');
       res.send(err);
     else
       res.json(entry);
