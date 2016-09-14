@@ -3,8 +3,7 @@ var app = express();
 var bodyParser = require("body-parser");
 var path = require("path");
 var mongoose = require("mongoose");
-
-var mongodbUri = "mongodb://heroku_2ffvpvj2:kv7ee1u6earcccdtn3f9qlvekc@ds033106.mlab.com:33106/heroku_2ffvpvj2";
+var mongodbUri = "mongodb://heroku_2ffvpvj2:kv7ee1u6earcccdtn3f9qlvekc@ds033106.mlab.com:33106/heroku_2ffvpvj2"; // get this in your next project with "heroku config | grep MONGODB_URI" after mLab is set up. 
 
 //controllers
 var entryController = require("./controllers/entryController");
@@ -34,5 +33,4 @@ mongoose.connect(mongodbUri, function (err, res) {
     console.log('Succeeded connected to: '+mongodbUri);
   }
 });
-// console.log(MONGOLAB_URI);
 console.log('heroku logs are working');

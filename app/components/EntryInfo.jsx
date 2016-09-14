@@ -6,7 +6,6 @@ module.exports = React.createClass({
     e.preventDefault();
     actions.deleteEntry(this.props.info);
   },
-
   updateEntry: function(e){
     e.preventDefault();
     actions.updateEntry(this.props.info);
