@@ -18,10 +18,10 @@ var controllers = require('./controllers');
 app.get('/api', controllers.api.index);
 // app.put('/api/entries/:entryId', controllers.entry.update);
 var uristring =
-process.env.MONGOLAB_URI ||
-process.env.MONGOHQ_URL ||
-// Connect to mongodb database
-"mongodb://localhost/retrospec";
+  (process.env.MONGOLAB_URI ||
+  process.env.MONGOHQ_URL ||
+  // Connect to mongodb database
+  "mongodb://localhost/retrospec");
 
 app.listen(process.env.PORT || 7777,function(){
   console.log("yo, we listening on port", 7777, "fam");
