@@ -8,10 +8,6 @@ var getEntriesCallback = function(entries){
   render();
 };
 
-
-setTimeout(function() {
-   $('.swipe-right-icon').hide();
- }, 1000);
 // var StarRatingComponent = require("react-star-rating-component");
 //
 // class App extends React.Component {

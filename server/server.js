@@ -24,4 +24,4 @@ app.listen(process.env.PORT || 7777,function(){
 });
 
 // Connect to mongodb database
-// mongoose.connect("mongodb://localhost/retrospec");
+mongoose.connect("mongodb://localhost/retrospec");
