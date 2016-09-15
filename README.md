@@ -12,6 +12,8 @@ Welcome to RetroSpec!
 * Node.js
 * Javascript
 * HTML/CSS
+* Bootstrap
+
 
 
 ### Current Features:
@@ -35,7 +37,6 @@ Welcome to RetroSpec!
 ##### Resources:
 - NPM Install
 
-* Bootstrap
 * Browserify
 * Gulp
 *
