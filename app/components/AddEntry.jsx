@@ -12,6 +12,10 @@ module.exports = React.createClass({
     addEntry:function(e){
         e.preventDefault();
         actions.addEntry(this.state);
+        return {
+            title:"",
+            body:""
+        }
     },
     handleInputChange:function(e){
       e.preventDefault();
@@ -39,5 +43,7 @@ module.exports = React.createClass({
                 </div>
             </form>
         )
+        var form = document.getElementById("form-group");
+        form.reset();
     }
 })

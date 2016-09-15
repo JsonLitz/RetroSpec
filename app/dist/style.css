@@ -3,6 +3,8 @@
 }
 body {
   background-color: #628395;
+  background-image: url(https://colewardell.files.wordpress.com/2010/09/compact-size.jpg);
+  background-size: 100% auto;
 }
 
 .title {

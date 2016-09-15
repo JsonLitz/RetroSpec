@@ -14,19 +14,19 @@ module.exports = React.createClass({
 
   render:function(){
     return( // notice these are bootstrap classes and can be embedded directly into the JSX which then gets rendered onto the index.html
-      <div className="panel panel-default">
-
-        <div className="panel-heading">
+      <div className="panel panel-default bg-info">
+        <div className="panel-heading ">
           {this.props.info.title}
           <span className="pull-right">{this.props.info.dateTime}</span>
-          <span className="center"> <Rating /></span>
+          <div className="center">
+            <Rating />
+          </div>
 
         </div>
 
+        <span className="pull-right text-uppercase delete-button fa fa-trash" onClick={this.deleteEntry}></span>
 
-        <span className="pull-right text-uppercase delete-button glyphicon-record" onClick={this.deleteEntry}></span>
-
-        <div className="panel-body swipe-right-icon">
+        <div className="panel-body swipe-right-icon ">
           {this.props.info.body}
         </div>
 
