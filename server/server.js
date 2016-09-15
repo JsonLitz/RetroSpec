@@ -3,6 +3,7 @@ var app = express();
 var bodyParser = require("body-parser");
 var path = require("path");
 var mongoose = require("mongoose");
+var mongodbUri = "mongodb://heroku_2ffvpvj2:kv7ee1u6earcccdtn3f9qlvekc@ds033106.mlab.com:33106/heroku_2ffvpvj2"; // get this in your next project with "heroku config | grep MONGODB_URI" after mLab is set up. 
 
 //controllers
 var entryController = require("./controllers/entryController");
@@ -17,21 +18,19 @@ app.use("/api", entryController);
 var controllers = require('./controllers');
 app.get('/api', controllers.api.index);
 // app.put('/api/entries/:entryId', controllers.entry.update);
-var uristring =
-  (process.env.MONGOLAB_URI ||
-  process.env.MONGOHQ_URL ||
+var uristring = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL ||
   // Connect to mongodb database
-  "mongodb://localhost/retrospec");
+  "mongodb://localhost/retrospec";
 
 app.listen(process.env.PORT || 7777,function(){
-  console.log("yo, we listening on port", 7777, "fam");
 });
 
 
-mongoose.connect(uristring, function (err, res) {
+mongoose.connect(mongodbUri, function (err, res) {
   if(err){
-    console.log('ERROR connecting to: ' + uristring+ '. ' + err);
+    console.log('ERROR connecting to: ' + mongodbUri+ '. ' + err);
   } else {
-    console.log('Succeeded connected to: '+uristring);
+    console.log('Succeeded connected to: '+mongodbUri);
   }
 });
+console.log('heroku logs are working');
