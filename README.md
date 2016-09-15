@@ -27,15 +27,18 @@ Welcome to RetroSpec!
 * search bar
 * email confirmation
 * email and password reset
-[Check it out!]
+
+* [Retrospec]
 (http://retrospec.herokuapp.com/)
 
 
 ##### Resources:
+- NPM Install
 
 * Bootstrap
 * Browserify
 * Gulp
+*
 
 [React Turorial](http://courses.reactjsprogram.com/p/reactjsfundamentals)
 
