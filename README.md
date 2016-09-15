@@ -10,9 +10,6 @@ Welcome to RetroSpec!
 * Express
 * React.js
 * Node.js
-* Bootstrap
-* browserify
-* Gulp
 * Javascript
 * HTML/CSS
 
@@ -30,10 +27,15 @@ Welcome to RetroSpec!
 * search bar
 * email confirmation
 * email and password reset
-[Check it out!](http://retrospec.herokuapp.com/)
+[Check it out!]
+(http://retrospec.herokuapp.com/)
 
 
 ##### Resources:
+
+* Bootstrap
+* Browserify
+* Gulp
 
 [React Turorial](http://courses.reactjsprogram.com/p/reactjsfundamentals)
 
