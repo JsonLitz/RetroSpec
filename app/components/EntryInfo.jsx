@@ -18,10 +18,9 @@ module.exports = React.createClass({
         <div className="panel-heading ">
           {this.props.info.title}
           <span className="pull-right">{this.props.info.dateTime}</span>
-          <div className="center">
+          <div>
             <Rating />
           </div>
-
         </div>
 
         <span className="pull-right text-uppercase delete-button fa fa-trash" onClick={this.deleteEntry}></span>
